@@ -10,12 +10,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const productElements = document.querySelectorAll('.product');
     const cartItemsElement = document.getElementById('cart-items');
     const totalPriceElement = document.getElementById('total-price');
+    const checkoutButton = document.getElementById('checkout-button');
+    const orderFormSection = document.getElementById('order-form');
+    const orderForm = document.getElementById('orderForm');
 
     productElements.forEach(productElement => {
         productElement.querySelector('.add-to-cart').addEventListener('click', () => {
             const productId = parseInt(productElement.getAttribute('data-id'));
             addToCart(productId);
         });
+    });
+
+    checkoutButton.addEventListener('click', () => {
+        orderFormSection.classList.remove('hidden');
+    });
+
+    orderForm.addEventListener('submit', event => {
+        event.preventDefault();
+        alert('Commande passée avec succès!');
+        cart.length = 0;
+        updateCart();
+        orderForm.reset();
+        orderFormSection.classList.add('hidden');
     });
 
     function addToCart(productId) {
