@@ -36,6 +36,19 @@
                 <!-- Les éléments du panier seront ajoutés ici -->
             </div>
             <p>Total: <span id="total-price">0</span>€</p>
+            <button id="checkout-button">Passer à la commande</button>
+        </section>
+        <section id="order-form" class="hidden">
+            <h2>Formulaire de commande</h2>
+            <form id="orderForm">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="address">Adresse:</label>
+                <input type="text" id="address" name="address" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Commander</button>
+            </form>
         </section>
     </main>
     <script src="script.js"></script>
