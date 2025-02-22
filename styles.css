@@ -20,21 +20,29 @@ header nav a {
 
 main {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
 }
 
 section {
     width: 45%;
+    margin-bottom: 20px;
 }
 
-.product, #cart {
+.product, #cart, #order-form {
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
 }
 
-.add-to-cart {
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-to-cart, #checkout-button, #orderForm button {
     background-color: #28a745;
     color: white;
     border: none;
@@ -42,6 +50,24 @@ section {
     cursor: pointer;
 }
 
-.add-to-cart:hover {
+.add-to-cart:hover, #checkout-button:hover, #orderForm button:hover {
     background-color: #218838;
+}
+
+.hidden {
+    display: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input {
+    padding: 5px;
+    margin-top: 5px;
 }
